@@ -26,3 +26,8 @@ pandoc section-I.md chapter-01.md chapter-02.md chapter-03.md chapter-04.md -o S
 ```
 
 Ensure Pandoc and a LaTeX distribution (like TeX Live) with `xelatex` are installed.
+
+## Cite Us:
+Arshad, M., & Zahid, S. (2025).
+*Let’s Simplify Bioinformatics: Section I — How to Think About Biological Data* (v0.1).
+https://doi.org/10.5281/zenodo.17921232
