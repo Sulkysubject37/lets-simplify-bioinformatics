@@ -5,6 +5,8 @@ In the previous chapters, we treated biological sequences as either physical sig
 
 The "Fragment Paradox" is the challenge of reconstructing a global structural map from local, noisy echoes. If we think of a genome as a book, sequencing doesn't give us the book; it gives us millions of shredded, overlapping scraps. The task of assembly is not to "glue" these scraps together, but to reconstruct the underlying **topology** of the information. By the end of this chapter, the reader should see a genome not as a long string, but as a path through a complex graph.
 
+*Example: Imagine finding a library of torn manuscripts where every page has been shredded into inch-long strips. You can find overlaps where the end of one strip matches the beginning of another (e.g., "...the quick brown" and "brown fox jumps..."). By following these overlaps, you can reconstruct the sentence. But if the phrase "the quick brown" appears in ten different books, you can no longer be certain which "fox" belongs to which story. This is the structural ambiguity of assembly.*
+
 ## The S.H.R.E.D. Framework: Understanding the Inputs
 To simplify the challenges of assembly, we use the **S.H.R.E.D.** mnemonic. This framework helps us evaluate the quality and complexity of the raw data before we attempt to build a map.
 
@@ -48,6 +50,8 @@ The most significant barrier to a perfect assembly is **Repetitive Information**
 
 Imagine trying to map a city where every street corner looks identical. You cannot tell if you are at the first corner or the tenth. This is the "ambiguity" of the assembly graph. To resolve it, we need reads that are **longer than the repeat**. If we cannot "bridge" the repeat, the assembly remains fragmented into disconnected "contigs" (contiguous sequences). This is why a "finished genome" is often just a collection of very long fragments rather than a single uninterrupted string.
 
+*Example: In music, a chorus is a repeat. If you have fragments of a song and you encounter the chorus, you know "where" you are in the melody, but you don't know "which" chorus it is—the one after the first verse or the second. The chorus acts as a "hub" in the song's graph. Without a long bridge of melody that spans from the verse, through the chorus, and into the next verse, the song's global structure remains a loop.*
+
 ![Figure 7.3: Graph Ambiguity and Repeats. A repeat collapses multiple genomic locations into a single graph structure, creating a "tangle" that prevents linear reconstruction.](figures/ch07_repeat_ambiguity.png)
 
 ## Scaffolding: Connecting the Islands
@@ -55,6 +59,8 @@ When the graph cannot be resolved into a single path, we use **Scaffolding**. Th
 
 ## The Epistemology of the Contig
 A "contig" is a statement of certainty. It represents a path in the assembly graph that is unambiguous. Every time an assembly breaks, it is because the "informational geometry" of the genome was too complex for the "spatial resolution" of our sequencing reads. Therefore, a bioinformatician must treat an assembly not as a final truth, but as a **structural hypothesis**.
+
+*Example: A gap in an assembly is not necessarily a failure of the software; it is often a fundamental limit of the data's geometry. Just as a low-resolution photograph cannot reveal the atoms of a leaf, a short-read assembly cannot resolve a long repeat. The "failure" is intrinsic to the relationship between the scale of the measurement and the scale of the feature.*
 
 We must distinguish between:
 1.  **The Biological Genome:** The actual physical molecule.
