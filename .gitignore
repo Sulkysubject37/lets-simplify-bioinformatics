@@ -19,3 +19,4 @@ lsbi/
 *.pdf
 !section-I/*.pdf
 !section-II/*.pdf
+create_github_release_command.txt
