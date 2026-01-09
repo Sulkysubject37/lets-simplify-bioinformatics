@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# R
+.Rhistory
+.RData
+.Rapp.history
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+lsbi/
+
+# Pandoc/LaTeX
+*.log
+*.aux
+*.pdf
+!section-I/*.pdf
+!section-II/*.pdf
