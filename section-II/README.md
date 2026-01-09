@@ -31,10 +31,8 @@ The PDF can be compiled using Pandoc. Navigate to this directory (`section-II/`)
 pandoc section-II.md chapter-05.md chapter-06.md chapter-07.md chapter-08.md -o Section-II_Biological-Sequences-as-Information_v0.1.pdf --pdf-engine=xelatex --from markdown --syntax-highlighting=tango
 ```
 
-## Exit Condition
+## Citation
 
-This section is considered successful only if the reader moves beyond the following misconceptions:
-1. "DNA is text"
-2. "Alignment is matching letters"
-3. "Assembly reconstructs the genome"
-4. "Variants equal effects"
+If you use this section in your work, please cite it as:
+
+Arshad, M. (2026). *Section II: Biological Sequences as Information*. In: Let's Simplify Bioinformatics: A Conceptual, Computational, and Interpretability-First Atlas of Biological Data Science. v0.2.
