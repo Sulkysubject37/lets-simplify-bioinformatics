@@ -3,6 +3,8 @@
 ## The Textual Illusion: Breaking the Digital Habit
 In the computational practice of bioinformatics, we are conditioned to treat DNA as a linear character string—a finite sequence of symbols from the alphabet $\Sigma = \{A, C, G, T\}$. This abstraction is a powerful tool for string matching, database indexing, and the execution of alignment algorithms. However, it creates a significant epistemic gap between our digital models and biological reality. The "String Fallacy" is the assumption that because we can represent DNA as text, it behaves like text.
 
+*Example: Consider the difference between a digital MP3 file and a vinyl record. The MP3 is a string of bits that requires a specific computational interpreter to exist; the vinyl is a physical landscape of grooves. If you scratch the vinyl, the needle skips because the physical coordinate has been altered, not because a "character" was misread. DNA is closer to the vinyl—it is a physical manifold where the "meaning" is inseparable from the material.*
+
 In a biological system, there is no "string." There is only a polymer with specific physical properties. The information is not "in" the letters; it is encoded in the structural, energetic, and temporal states of the molecule. When we reduce DNA to text, we discard the very context that makes the information functional. This chapter reframes sequences as physical signals subject to the laws of information theory, thermodynamics, and evolutionary selection. To simplify bioinformatics, we must first unlearn the habit of seeing DNA as a word and begin seeing it as a spatial trajectory.
 
 ## The C.O.D.E. Framework: The Four Pillars of Sequence Information
@@ -56,6 +58,8 @@ $$H = -\sum_{i \in \{A,C,G,T\}} p_i \log_2(p_i)$$
 
 If a position is perfectly conserved (e.g., in a critical catalytic site), we have $p_i = 1$ for one base and $0$ for the others. This leads to $H = 0$. Zero uncertainty means maximum information. If all four bases are equally likely ($p_i = 0.25$), $H = 2$ bits. This position tells us nothing about the functional requirements of the site. High information content ($2 - H$) identifies the "peaks" of the biological signal.
 
+*Example: In music, entropy represents the tension between constraint and freedom. A perfectly conserved site is like a single, held note in a liturgical chant—it is predictable, rigid, and carries the weight of a fundamental requirement. A high-entropy site is like free improvisation; any note could follow, indicating that no single physical constraint is currently dictating the sequence. Evolution is the process of silencing the improvisation to find the harmony.*
+
 ![Figure 5.2: The transition from the Textual View (top) to the Informational View (bottom). Functional constraints create peaks of information density that guide our analysis.](figures/ch05_spatial_information.png)
 
 ## Mutual Information: How Positions "Talk"
@@ -64,6 +68,8 @@ Information is not just stored at individual sites; it is stored in the relation
 $$MI(X, Y) = \sum_{x \in X} \sum_{y \in Y} p(x, y) \log_2 \left( \frac{p(x, y)}{p(x)p(y)} \right)$$
 
 By calculating MI, we can infer the 3D structure of molecules from 1D sequences. This proves that sequences are not just linear strings but networks of interdependent informational nodes. The "alphabet" of DNA is a system of coupled oscillators, not a list of characters.
+
+*Example: Consider the relationship between two singers in a counterpoint. If one singer moves up, the other might be constrained to move down to maintain the harmony. We can measure their "mutual information" by observing how the movement of one predicts the state of the other. In a protein, if position 50 and position 150 always change together, they are functionally harmonized, revealing a structural bond that the 1D string hides.*
 
 ![Figure 5.3: Mutual Information Network. Lines represent informational coupling between distant sequence positions, revealing the hidden 3D structure.](figures/ch05_mutual_information.png)
 
