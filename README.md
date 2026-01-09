@@ -11,6 +11,7 @@ Bioinformatics is not inherently difficult—it is poorly explained. This projec
 The book is divided into thematic sections, each progressing from conceptual foundations to executable case studies.
 
 -   **Section I — How to Think About Biological Data:** Establishes the conceptual and epistemological foundation for the rest of the book.
+-   **Section II — Biological Sequences as Information:** Transforms the mental model of sequences from linear text into spatial, probabilistic, and structural objects.
 
 ## Contribution
 
