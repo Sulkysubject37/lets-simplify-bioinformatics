@@ -25,7 +25,7 @@ We quantify the "amount" of variation using metrics like **Nucleotide Diversity 
 $$\pi = \sum_{ij} x_i x_j \pi_{ij}$$
 Where $x_i$ and $x_j$ are the frequencies of the $i$-th and $j$-th sequences, and $\pi_{ij}$ is the number of differences between them. A high $\pi$ suggests a diverse, robust information pool that has been defended against bottlenecks. A low $\pi$ suggests a recent selective sweep where one "peak" in the information landscape has dominated all others.
 
-![Figure 8.1: The Distribution of Variation. Most variants are neutral (noise), while a small fraction are under selection (signal). The challenge of bioinformatics is to separate the two.](figures/ch08_variant_distribution.png)
+![The Distribution of Variation. Most variants are neutral (noise), while a small fraction are under selection (signal). The challenge of bioinformatics is to separate the two.](figures/ch08_variant_distribution.png)
 
 ## The S.I.G.N.I.F.I.C.A.N.C.E. Mnemonic: Evaluating Impact
 When we find a variant, we must determine if it is a "functional signal" or "neutral noise." We use the **S.I.G.N.I.F.I.C.A.N.C.E.** framework:
@@ -56,7 +56,7 @@ The "Reference Genome" is a coordinate trap. By forcing every individual's signa
 *   **M — Mapping Certainty:** We can quantify how well a new read fits the existing graph topology.
 *   **E — Epistemic Humility:** Recognizing that our "reference" is just one possible path through a much larger informational space. *The reference is a single ray of light; the pangenome is the sun itself.*
 
-![Figure 8.2: The Linear Reference vs. The Graph Genome. Linear references create a "coordinate shadow" where new information is hidden. Graphs preserve the full spatial diversity of the population.](figures/ch08_graph_genome.png)
+![The Linear Reference vs. The Graph Genome. Linear references create a "coordinate shadow" where new information is hidden. Graphs preserve the full spatial diversity of the population.](figures/ch08_graph_genome.png)
 
 ## The Scales of Change: From Pixels to Architecture
 We categorize variation by its geometric scale, moving from local "typos" to global "remodellings":
@@ -68,7 +68,7 @@ We categorize variation by its geometric scale, moving from local "typos" to glo
     *   **Translocations:** A piece of the signal is moved to a completely different coordinate. This can place a gene under the control of an entirely different "volume knob" (promoter).
     *   **Copy Number Variation (CNVs):** The "volume" of the signal is increased or decreased. Having three copies of a gene instead of two can lead to toxic levels of information output.
 
-![Figure 8.3: Structural Variation as Geometric Rearrangement. Inversions and translocations change the 3D "address" of the biological information without necessarily changing the characters themselves.](figures/ch08_structural_variation.png)
+![Structural Variation as Geometric Rearrangement. Inversions and translocations change the 3D "address" of the biological information without necessarily changing the characters themselves.](figures/ch08_structural_variation.png)
 
 ## Epistatic Geometry: The Interaction of Signals
 In a textual view, a variant at position 100 is independent of a variant at position 200. In a spatial view, these sites might be physically touching in the folded protein. **Epistasis** is the phenomenon where the effect of one variant depends on the presence of another. 

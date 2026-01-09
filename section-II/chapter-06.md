@@ -31,7 +31,7 @@ Levenshtein distance ($d_L$) is the minimum number of "edit operations" (substit
 ### 3. Biological Distance: The Weighted Manifold
 In biology, not all steps are equal. Replacing an $A$ with a $G$ (a transition) is physically easier and more common than replacing $A$ with $C$ (a transversion). Biological distance is a "warped" metric where the weights are determined by chemical similarity and evolutionary probability.
 
-![Figure 6.1: Sequence Space as a Metric Manifold. Different sequences are points in high-dimensional space. Alignment is the process of finding the shortest "geodesic" path between them.](figures/ch06_sequence_space.png)
+![Sequence Space as a Metric Manifold. Different sequences are points in high-dimensional space. Alignment is the process of finding the shortest "geodesic" path between them.](figures/ch06_sequence_space.png)
 
 ## The Physics of Substitution: Matrices as Chemical Filters
 When we align, we use a substitution matrix (like BLOSUM62 or PAM250). These are not arbitrary datasets; they are models of the "geometric cost" of chemical exchange.
@@ -45,7 +45,7 @@ A score in these matrices is a log-odds ratio:
 $$S_{ij} = \frac{1}{\lambda} \log \left( \frac{q_{ij}}{p_i p_j} \right)$$
 Where $q_{ij}$ is the observed frequency of substitution $i \to j$, and $p_i, p_j$ are background frequencies. A positive score means the substitution is more likely than random chance, indicating a shared physical constraint.
 
-![Figure 6.2: The Substitution Heatmap. Colors represent the "geometric cost" of substitution. Similar chemical interfaces (e.g., Leucine and Isoleucine) have low costs and high scores.](figures/ch06_substitution_matrix.png)
+![The Substitution Heatmap. Colors represent the "geometric cost" of substitution. Similar chemical interfaces (e.g., Leucine and Isoleucine) have low costs and high scores.](figures/ch06_substitution_matrix.png)
 
 ## The Scoring Manifold: Dynamic Programming in 3D
 The core of sequence alignment is Dynamic Programming (DP), specifically the Needleman-Wunsch and Smith-Waterman algorithms. In a geometric mindset, DP is the construction of a **Scoring Manifold**.
@@ -57,7 +57,7 @@ Imagine a 2D grid where Sequence A is on the X-axis and Sequence B is on the Y-a
 *   **The Recurrence:** For every cell, we look at three neighbors (diagonal, up, left) and choose the one that provides the maximum "altitude." This is Bellman's Principle of Optimality.
 *   **The Path:** The final alignment is the "ridge" that follows the highest possible cumulative score through the matrix.
 
-![Figure 6.3: The Dynamic Programming Scoring Landscape. The optimal alignment is a "valley" or "path of least resistance" through a 3D surface of potential scores.](figures/ch06_dp_landscape.png)
+![The Dynamic Programming Scoring Landscape. The optimal alignment is a "valley" or "path of least resistance" through a 3D surface of potential scores.](figures/ch06_dp_landscape.png)
 
 ## The W.A.R.P. Mnemonic: Why We Need Gaps
 Biological signals do not just change characters; they expand and contract. To align them, we must "warp" the coordinate system. We use the **W.A.R.P.** mnemonic to understand this process:
@@ -70,7 +70,7 @@ Biological signals do not just change characters; they expand and contract. To a
 $$Score_{gap} = \gamma + \delta \cdot (L-1)$$
 $\gamma$ (Gap Open) is the high energetic cost of breaking the helix or protein backbone. $\delta$ (Gap Extend) is the lower cost of increasing the size of that break. This mathematical model reflects a physical reality: it is harder to start a mutation than to continue one. *A gap is a stutter in the biological signal, a moment where the coordinate system holds its breath.*
 
-![Figure 6.4: The Geometry of Gaps. Gaps are horizontal or vertical jumps in the coordinate space, allowing the path to "skip" noisy regions and reconnect with the signal.](figures/ch06_gap_geometry.png)
+![The Geometry of Gaps. Gaps are horizontal or vertical jumps in the coordinate space, allowing the path to "skip" noisy regions and reconnect with the signal.](figures/ch06_gap_geometry.png)
 
 ## Heuristics: Scanning the Landscape (BLAST)
 For massive datasets, mapping the entire DP manifold is computationally impossible ($O(n^2)$). Tools like BLAST (Basic Local Alignment Search Tool) use a **Heuristic Approximation**.
@@ -81,7 +81,7 @@ For massive datasets, mapping the entire DP manifold is computationally impossib
 
 BLAST is essentially a low-resolution satellite scan of the sequence space. It might miss some small valleys, but it is guaranteed to find the major landmarks.
 
-![Figure 6.5: The Seed-and-Extend Heuristic. Alignment is simplified by finding high-scoring anchors and only calculating the geometry in their immediate vicinity.](figures/ch06_blast_seeds.png)
+![The Seed-and-Extend Heuristic. Alignment is simplified by finding high-scoring anchors and only calculating the geometry in their immediate vicinity.](figures/ch06_blast_seeds.png)
 
 ## Global vs. Local: The Scale of Observation
 The choice of alignment algorithm defines the **Scale of the Geometry**:
