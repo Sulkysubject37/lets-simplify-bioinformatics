@@ -3,7 +3,7 @@
 ## The String Fallacy in Alignment: From Searching to Warping
 In most computational fields, "searching" is a discrete operation: a pattern is either present or absent. In bioinformatics, the "String Fallacy" is the assumption that biological sequences can be compared using simple character-matching logic. Because biological information is a physical signal subject to millions of years of evolutionary noise, we rarely find exact matches. Instead, we perform **alignment**.
 
-Alignment is the process of finding the optimal spatial and temporal relationship between two or more sequences. By the end of this chapter, the reader should stop seeing alignment as a character-matching exercise and begin seeing it as a **geometric optimization problem**: finding the path of least resistance through a high-dimensional scoring landscape. To align is to measure the "work" or "energy" required to transform one physical signal into another.
+Alignment is the process of finding the optimal spatial and temporal relationship between two or more sequences. By the end of this chapter, the reader should stop seeing alignment as a character-matching exercise and begin seeing it as a **geometric optimization problem**: finding the path of least resistance through a high-dimensional scoring landscape. To align is to measure the "work" or "energy" required to transform one physical signal into another. *To align is to reconcile two disparate histories into a single shared narrative.*
 
 ## The M.A.P.P.I.N.G. Framework
 To simplify the geometric nature of alignment, we use the **M.A.P.P.I.N.G.** mnemonic. This framework ensures that alignment is treated as a physical transformation in coordinate space rather than a textual comparison.
@@ -19,7 +19,7 @@ To simplify the geometric nature of alignment, we use the **M.A.P.P.I.N.G.** mne
 ## Sequence Space as a Metric Manifold
 To think geometrically, we must first define "distance." In a textual world, two characters are either the same or different. In a geometric world, we ask: *How much work is required to move from state A to state B?* This leads us to the concept of a **Metric Space**. A metric space is a set of points where a distance function $d(x, y)$ satisfies the triangle inequality: $d(x, z) \leq d(x, y) + d(y, z)$.
 
-*Example: In music, distance is not about the specific notes, but the intervals between them. A melody transposed from C major to G major remains the "same" melody because the geometric relationships between the notes are preserved, even if every single "character" (the absolute pitch) has changed. Alignment is the search for these conserved intervals across different biological keys.*
+*Example: In music, distance is not about the specific notes, but the intervals between them. A melody transposed from C major to G major remains the "same" melody because the geometric relationships between the notes are preserved, even if every single "character" (the absolute pitch) has changed. Alignment is the search for these conserved intervals across different biological keys. *It is the recognition of a familiar song sung by a different voice.**
 
 ### 1. Hamming Distance: The Rigid Metric
 The Hamming distance ($d_H$) measures the number of positions where two sequences of equal length differ. This is the geometry of a "fixed" coordinate system where only the characters can change. It is the distance of a world without insertions or deletions.
@@ -50,7 +50,7 @@ Where $q_{ij}$ is the observed frequency of substitution $i \to j$, and $p_i, p_
 ## The Scoring Manifold: Dynamic Programming in 3D
 The core of sequence alignment is Dynamic Programming (DP), specifically the Needleman-Wunsch and Smith-Waterman algorithms. In a geometric mindset, DP is the construction of a **Scoring Manifold**.
 
-*Example: Imagine hiking through a mountain range to reach a specific destination. You could walk in a straight line, but the "cost" (energy) would be too high if it requires scaling a vertical cliff. Instead, you follow the trails—the paths of least resistance that have already been laid out by the topography. Alignment is the process of finding these "evolutionary trails" through the scoring landscape.*
+*Example: Imagine hiking through a mountain range to reach a specific destination. You could walk in a straight line, but the "cost" (energy) would be too high if it requires scaling a vertical cliff. Instead, you follow the trails—the paths of least resistance that have already been laid out by the topography. Alignment is the process of finding these "evolutionary trails" through the scoring landscape. *The algorithm does not create the path; it discovers the footsteps already left by selection.**
 
 Imagine a 2D grid where Sequence A is on the X-axis and Sequence B is on the Y-axis. Every cell $(i, j)$ represents a potential pairing. We can add a Z-axis representing the cumulative score. This creates a surface with peaks, valleys, and ridges.
 *   **The Initialization:** We set the starting boundary conditions (the "floor" of our landscape).
@@ -68,7 +68,7 @@ Biological signals do not just change characters; they expand and contract. To a
 *   **P — Persistence:** A gap, once opened, tends to persist. We model this using **Affine Gap Penalties**.
 
 $$Score_{gap} = \gamma + \delta \cdot (L-1)$$
-$\gamma$ (Gap Open) is the high energetic cost of breaking the helix or protein backbone. $\delta$ (Gap Extend) is the lower cost of increasing the size of that break. This mathematical model reflects a physical reality: it is harder to start a mutation than to continue one.
+$\gamma$ (Gap Open) is the high energetic cost of breaking the helix or protein backbone. $\delta$ (Gap Extend) is the lower cost of increasing the size of that break. This mathematical model reflects a physical reality: it is harder to start a mutation than to continue one. *A gap is a stutter in the biological signal, a moment where the coordinate system holds its breath.*
 
 ![Figure 6.4: The Geometry of Gaps. Gaps are horizontal or vertical jumps in the coordinate space, allowing the path to "skip" noisy regions and reconnect with the signal.](figures/ch06_gap_geometry.png)
 
