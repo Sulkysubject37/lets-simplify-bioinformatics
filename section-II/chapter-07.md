@@ -26,7 +26,7 @@ In the OLC approach, we treat every read as a node in a graph. We draw an edge b
 *   **Consensus:** Determine the most likely sequence along that path.
 OLC is spatially intuitive but computationally expensive ($O(n^2)$), making it difficult to use for massive datasets.
 
-![Figure 7.1: The Overlap Graph. Reads are nodes, and overlaps are edges. The assembly is a path that visits the most probable sequence of fragments.](figures/ch07_overlap_graph.png)
+![The Overlap Graph. Reads are nodes, and overlaps are edges. The assembly is a path that visits the most probable sequence of fragments.](figures/ch07_overlap_graph.png)
 
 ### 2. De Bruijn Graphs (dBG)
 The de Bruijn strategy shifts the focus from the reads to the **k-mers** (substrings of length $k$). We decompose every read into all possible k-mers.
@@ -34,7 +34,7 @@ The de Bruijn strategy shifts the focus from the reads to the **k-mers** (substr
 *   **Edges:** An edge exists if two k-mers overlap by $k-1$ characters.
 The geometry of a dBG is determined by the **k-mer spectrum** of the genome. In this view, a read is just a "walk" through a pre-existing graph of all possible information. dBG is much faster for large datasets but is highly sensitive to sequencing errors and repetitive "cycles."
 
-![Figure 7.2: The De Bruijn Graph. Nodes represent unique k-mers. Repetitive regions manifest as cycles or "hubs" where multiple paths converge and diverge.](figures/ch07_debruijn_graph.png)
+![The De Bruijn Graph. Nodes represent unique k-mers. Repetitive regions manifest as cycles or "hubs" where multiple paths converge and diverge.](figures/ch07_debruijn_graph.png)
 
 ## The G.R.A.P.H. Mnemonic: The Logic of Assembly
 Once we have a graph, we must navigate it to reconstruct the sequence. We use the **G.R.A.P.H.** mnemonic to guide this navigation:
@@ -52,7 +52,7 @@ Imagine trying to map a city where every street corner looks identical. You cann
 
 *Example: In music, a chorus is a repeat. If you have fragments of a song and you encounter the chorus, you know "where" you are in the melody, but you don't know "which" chorus it is—the one after the first verse or the second. The chorus acts as a "hub" in the song's graph. Without a long bridge of melody that spans from the verse, through the chorus, and into the next verse, the song's global structure remains a loop. *The graph remembers the melody, but forgets the journey.***
 
-![Figure 7.3: Graph Ambiguity and Repeats. A repeat collapses multiple genomic locations into a single graph structure, creating a "tangle" that prevents linear reconstruction.](figures/ch07_repeat_ambiguity.png)
+![Graph Ambiguity and Repeats. A repeat collapses multiple genomic locations into a single graph structure, creating a "tangle" that prevents linear reconstruction.](figures/ch07_repeat_ambiguity.png)
 
 ## Scaffolding: Connecting the Islands
 When the graph cannot be resolved into a single path, we use **Scaffolding**. This is the process of using "linkage" information (e.g., paired-end reads or Hi-C data) to determine the relative order and orientation of contigs, even if we don't know the exact sequence of the "gaps" between them. Scaffolding is like placing islands on a map—we know the distance between the islands, even if we haven't mapped the seafloor between them. *It is an architecture of bridges built over an ocean of uncertainty.*
