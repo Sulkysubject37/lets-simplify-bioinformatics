@@ -23,6 +23,8 @@ The symbols $A, C, G,$ and $T$ are convenience labels for complex nitrogenous ba
 ## Shannon’s Bridge: The Communication Model of Biology
 We can simplify the complexity of biology by mapping it onto Claude Shannon’s classic model of a communication system. This reframing allows us to apply the rigors of signal processing to biological data.
 
+![Figure 5.1: The Shannon Model of Biological Communication. Evolution acts as the encoder, the environment as the noisy channel, and the cellular machinery as the decoder.](figures/ch05_communication_model.png)
+
 *   **The Source:** The evolutionary requirement (e.g., "Maintain a stable metabolic pathway").
 *   **The Encoder:** Natural selection acting over millions of years, "writing" the optimized sequence into the genome.
 *   **The Channel:** The intracellular environment, which is subject to radiation, chemical damage, and thermal noise.
@@ -54,7 +56,7 @@ $$H = -\sum_{i \in \{A,C,G,T\}} p_i \log_2(p_i)$$
 
 If a position is perfectly conserved (e.g., in a critical catalytic site), we have $p_i = 1$ for one base and $0$ for the others. This leads to $H = 0$. Zero uncertainty means maximum information. If all four bases are equally likely ($p_i = 0.25$), $H = 2$ bits. This position tells us nothing about the functional requirements of the site. High information content ($2 - H$) identifies the "peaks" of the biological signal.
 
-![Figure 5.1: The transition from the Textual View (top) to the Informational View (bottom). Functional constraints create peaks of information density that guide our analysis.](figures/ch05_spatial_information.png)
+![Figure 5.2: The transition from the Textual View (top) to the Informational View (bottom). Functional constraints create peaks of information density that guide our analysis.](figures/ch05_spatial_information.png)
 
 ## Mutual Information: How Positions "Talk"
 Information is not just stored at individual sites; it is stored in the relationship between sites. This is known as **Mutual Information (MI)**. If two positions in a protein are physically in contact, a mutation in one often requires a compensatory mutation in the other to maintain the structural signal.
@@ -63,8 +65,12 @@ $$MI(X, Y) = \sum_{x \in X} \sum_{y \in Y} p(x, y) \log_2 \left( \frac{p(x, y)}{
 
 By calculating MI, we can infer the 3D structure of molecules from 1D sequences. This proves that sequences are not just linear strings but networks of interdependent informational nodes. The "alphabet" of DNA is a system of coupled oscillators, not a list of characters.
 
+![Figure 5.3: Mutual Information Network. Lines represent informational coupling between distant sequence positions, revealing the hidden 3D structure.](figures/ch05_mutual_information.png)
+
 ## The Redundancy Paradox: Inefficiency as Robustness
 Why does the genetic code use 64 codons for only 20 amino acids? To a computer scientist, this looks like an inefficient lookup table. To a bioinformatician, this is a **high-fidelity communication protocol**. By having multiple "names" for the same amino acid, biology creates a buffer. A single-point mutation often results in the same amino acid (a synonymous mutation), meaning the "functional signal" remains unchanged even if the "text" is altered. This is why we can find meaningful alignments between species that diverged hundreds of millions of years ago—the information is more stable than the letters.
+
+![Figure 5.4: Codon Degeneracy as an Error-Correction Code. The clustering of codons for the same amino acid ensures the signal is robust to noise.](figures/ch05_genetic_redundancy.png)
 
 ## The Map vs. The Territory: Epistemic Discipline
 A common mistake in bioinformatics is to confuse the "map" (the sequence in our database) with the "territory" (the physical DNA in the cell).
