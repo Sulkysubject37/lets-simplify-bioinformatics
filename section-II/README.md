@@ -35,4 +35,4 @@ pandoc section-II.md chapter-05.md chapter-06.md chapter-07.md chapter-08.md -o 
 
 If you use this section in your work, please cite it as:
 
-Arshad, M. (2026). *Section II: Biological Sequences as Information*. In: Let's Simplify Bioinformatics: A Conceptual, Computational, and Interpretability-First Atlas of Biological Data Science. v0.2.
+Arshad, M. (2026). Let's Simplify Bioinformatics (section-II.v.1.0). Zenodo. https://doi.org/10.5281/zenodo.18206842
